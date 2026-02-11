@@ -1,0 +1,31 @@
+{
+  "name": "notion_bookkeeper",
+  "description": "智能记账助手：支持分次输入账户金额，自动整合到 Notion 同一天的记录中并计算总资产。",
+  "credentials": {
+    "notion_token": {
+      "type": "text",
+      "required": true,
+      "label": "Notion Integration Token",
+      "description": "以 ntn_ 开头的 Token"
+    },
+    "page_id": {
+      "type": "text",
+      "required": true,
+      "label": "Notion Page ID",
+      "description": "Notion 页面的 32 位 ID"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "alipay": { "type": "number", "description": "支付宝金额" },
+      "webank": { "type": "number", "description": "微众银行金额" },
+      "cmb": { "type": "number", "description": "招商银行金额" },
+      "housing_fund": { "type": "number", "description": "公积金金额" },
+      "boc_hk": { "type": "number", "description": "中国银行香港金额 (HKD)" },
+      "longbridge": { "type": "number", "description": "长桥证券金额 (HKD)" },
+      "remark": { "type": "string", "description": "备注内容" }
+    }
+  },
+  "entry": "main.py"
+}
