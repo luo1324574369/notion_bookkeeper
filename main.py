@@ -4,11 +4,13 @@ import os
 import re
 from datetime import datetime
 from notion_client import Client
+from dotenv import load_dotenv  # 新增
 
-# 读取配置
+# 自动从 .env 文件加载环境变量 (本地开发环境生效)
+load_dotenv()
+
 NOTION_TOKEN = os.getenv("notion_token")
 PAGE_ID = os.getenv("page_id")
-
 
 def get_today_data(notion, page_id, today_str):
     """读取当天已有的数据并解析成字典"""
